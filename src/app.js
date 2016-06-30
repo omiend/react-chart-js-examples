@@ -84,6 +84,7 @@ export class ChartsComponent extends Component {
     const style = {
       content : {
         padding: '10px 40px',
+        color: '#000000',
         backgroundColor: '#ffffff'
       }
     }
