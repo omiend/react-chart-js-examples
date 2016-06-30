@@ -63,20 +63,20 @@ export class ChartsComponent extends Component {
     };
   };
 
-  readTemperatureData() {
-    console.debug(' - ChartsComponent readTemperatureData');
-    $.ajax({
-      url: "/api/temperature",
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: (response) => {
-      },
-      error: (xhr, status, err) => {
-        console.error("/api/temperature", status, err.toString());
-      }
-    });
-  }
+  // readTemperatureData() {
+  //   console.debug(' - ChartsComponent readTemperatureData');
+  //   $.ajax({
+  //     url: "/api/temperature",
+  //     type: 'GET',
+  //     dataType: 'json',
+  //     cache: false,
+  //     success: (response) => {
+  //     },
+  //     error: (xhr, status, err) => {
+  //       console.error("/api/temperature", status, err.toString());
+  //     }
+  //   });
+  // }
 
   render() {
     console.debug(' - ChartsComponent render');

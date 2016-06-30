@@ -17,16 +17,15 @@ app.use((req, res, next) => {
     next();
 });
 
-// fsがjsから使えなかったので
-app.get('/api/temperature', (req, res) => {
-  fs.readFile(COMMENTS_FILE, (err, data) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    res.json(JSON.parse(data));
-  });
-});
+// app.get('/api/temperature', (req, res) => {
+//   fs.readFile(COMMENTS_FILE, (err, data) => {
+//     if (err) {
+//       console.error(err);
+//       process.exit(1);
+//     }
+//     res.json(JSON.parse(data));
+//   });
+// });
 
 app.listen(app.get('port'), () => {
   console.log('Server started: http://localhost:' + app.get('port') + '/');

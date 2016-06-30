@@ -135,22 +135,24 @@
 	  }
 
 	  _createClass(ChartsComponent, [{
-	    key: 'readTemperatureData',
-	    value: function readTemperatureData() {
-	      console.debug(' - ChartsComponent readTemperatureData');
-	      $.ajax({
-	        url: "/api/temperature",
-	        type: 'GET',
-	        dataType: 'json',
-	        cache: false,
-	        success: function success(response) {},
-	        error: function error(xhr, status, err) {
-	          console.error("/api/temperature", status, err.toString());
-	        }
-	      });
-	    }
-	  }, {
 	    key: 'render',
+
+
+	    // readTemperatureData() {
+	    //   console.debug(' - ChartsComponent readTemperatureData');
+	    //   $.ajax({
+	    //     url: "/api/temperature",
+	    //     type: 'GET',
+	    //     dataType: 'json',
+	    //     cache: false,
+	    //     success: (response) => {
+	    //     },
+	    //     error: (xhr, status, err) => {
+	    //       console.error("/api/temperature", status, err.toString());
+	    //     }
+	    //   });
+	    // }
+
 	    value: function render() {
 	      console.debug(' - ChartsComponent render');
 	      console.debug(this.state);
