@@ -49,7 +49,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.TemperaturesComponent = exports.ChartsComponent = undefined;
+	exports.MainComponent = exports.ChartsComponent = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -156,48 +156,70 @@
 	    value: function render() {
 	      console.debug(' - ChartsComponent render');
 	      console.debug(this.state);
-	      return _react2.default.createElement(_reactChartjs.Line, { data: this.state.data, options: this.state.option, width: '900', height: '450' });
+	      var style = {
+	        content: {
+	          padding: '10px 40px',
+	          backgroundColor: '#ffffff'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'chartsComponent', style: style.content },
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Chart Component'
+	        ),
+	        _react2.default.createElement(_reactChartjs.Line, { data: this.state.data, options: this.state.option, width: '900', height: '450' })
+	      );
 	    }
 	  }]);
 
 	  return ChartsComponent;
 	}(_react.Component);
 
-	var TemperaturesComponent = exports.TemperaturesComponent = function (_Component2) {
-	  _inherits(TemperaturesComponent, _Component2);
+	var MainComponent = exports.MainComponent = function (_Component2) {
+	  _inherits(MainComponent, _Component2);
 
-	  function TemperaturesComponent(props) {
-	    _classCallCheck(this, TemperaturesComponent);
+	  function MainComponent(props) {
+	    _classCallCheck(this, MainComponent);
 
-	    console.debug('TemperaturesComponent constructor');
+	    console.debug('MainComponent constructor');
 
-	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(TemperaturesComponent).call(this, props));
+	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(MainComponent).call(this, props));
 
 	    _this2.state = { data: [] };
 	    return _this2;
 	  }
 
-	  _createClass(TemperaturesComponent, [{
+	  _createClass(MainComponent, [{
 	    key: 'render',
 	    value: function render() {
-	      console.debug('TemperaturesComponent render');
+	      console.debug('MainComponent render');
+	      var style = {
+	        content: {
+	          padding: '10px 40px',
+	          color: '#ffffff',
+	          backgroundColor: '#1e50a2'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'temperatureList' },
+	        { className: 'temperatureList', style: style.content },
 	        _react2.default.createElement(
 	          'h1',
 	          null,
-	          'TemperaturesComponent'
+	          'Main Component'
 	        ),
 	        _react2.default.createElement(ChartsComponent, { data: this.state.data })
 	      );
 	    }
 	  }]);
 
-	  return TemperaturesComponent;
+	  return MainComponent;
 	}(_react.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(TemperaturesComponent, null), document.getElementById('content'));
+	_reactDom2.default.render(_react2.default.createElement(MainComponent, null), document.getElementById('content'));
 
 /***/ },
 /* 1 */

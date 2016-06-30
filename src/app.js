@@ -81,25 +81,41 @@ export class ChartsComponent extends Component {
   render() {
     console.debug(' - ChartsComponent render');
     console.debug(this.state);
+    const style = {
+      content : {
+        padding: '10px 40px',
+        backgroundColor: '#ffffff'
+      }
+    }
     return (
-      <LineChart data={this.state.data} options={this.state.option} width="900" height="450" />
+      <div className="chartsComponent" style={style.content}>
+        <h2>Chart Component</h2>
+        <LineChart data={this.state.data} options={this.state.option} width="900" height="450" />
+      </div>
     )
   }
 }
 
-export class TemperaturesComponent extends Component {
+export class MainComponent extends Component {
 
   constructor(props) {
-    console.debug('TemperaturesComponent constructor');
+    console.debug('MainComponent constructor');
     super(props);
     this.state = {data: []};
   }
 
   render() {
-    console.debug('TemperaturesComponent render');
+    console.debug('MainComponent render');
+    const style = {
+      content : {
+        padding: '10px 40px',
+        color: '#ffffff',
+        backgroundColor: '#1e50a2'
+      }
+    }
     return (
-      <div className="temperatureList">
-        <h1>TemperaturesComponent</h1>
+      <div className="temperatureList" style={style.content}>
+        <h1>Main Component</h1>
         <ChartsComponent data={this.state.data} />
       </div>
     )
@@ -107,6 +123,6 @@ export class TemperaturesComponent extends Component {
 }
  
 ReactDOM.render(
-  <TemperaturesComponent />,
+  <MainComponent />,
   document.getElementById('content')
 );
