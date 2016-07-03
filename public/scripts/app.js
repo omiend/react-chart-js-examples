@@ -49,7 +49,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.MainComponent = exports.ChartsComponent = undefined;
+	exports.MainComponent = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -61,7 +61,9 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactChartjs = __webpack_require__(168);
+	var _chart = __webpack_require__(179);
+
+	var _chart2 = _interopRequireDefault(_chart);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -71,126 +73,18 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ChartsComponent = exports.ChartsComponent = function (_Component) {
-	  _inherits(ChartsComponent, _Component);
-
-	  function ChartsComponent(props) {
-	    _classCallCheck(this, ChartsComponent);
-
-	    console.debug(' - ChartsComponent constructor');
-
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ChartsComponent).call(this, props));
-
-	    _this.state = {
-	      data: {
-	        labels: ["2016/05/29", "2016/05/30", "2016/05/31", "2016/06/01", "2016/06/02", "2016/06/03", "2016/06/04", "2016/06/05", "2016/06/06", "2016/06/07", "2016/06/08", "2016/06/09", "2016/06/10", "2016/06/11", "2016/06/12", "2016/06/13", "2016/06/14", "2016/06/15", "2016/06/16", "2016/06/17", "2016/06/18", "2016/06/19", "2016/06/20", "2016/06/21", "2016/06/22", "2016/06/23", "2016/06/24", "2016/06/25", "2016/06/26", "2016/06/27", "2016/06/28"],
-	        datasets: [{
-	          label: '2015 Dayly max temperatures',
-	          fillColor: 'rgba(128,0,0,0.2)',
-	          strokeColor: 'rgba(128,0,0,1)',
-	          pointColor: 'rgba(128,0,0,1)',
-	          pointStrokeColor: '#fff',
-	          pointHighlightFill: '#fff',
-	          pointHighlightStroke: 'rgba(128,0,0,1)',
-	          data: ["26", "21.2", "24.4", "24.9", "26.9", "23.2", "25.1", "22.1", "26.2", "23.8", "27.1", "24.9", "30", "27.3", "27.8", "25.3", "27", "26.1", "24.2", "29.5", "31.8", "26.6", "27.5", "27.3", "25.8", "28", "27.6", "33.6", "28.4", "30", "22.3"]
-	        }, {
-	          label: '2015 Dayly min temperatures',
-	          fillColor: 'rgba(0,0,128,0.2)',
-	          strokeColor: 'rgba(0,0,128,1)',
-	          pointColor: 'rgba(0,0,128,1)',
-	          pointStrokeColor: '#fff',
-	          pointHighlightFill: '#fff',
-	          pointHighlightStroke: 'rgba(0,0,128,1)',
-	          data: ["16.3", "15.7", "17.9", "17.4", "17.1", "15.2", "15.3", "16.1", "15.2", "18.6", "17.7", "20.5", "21.2", "19.8", "19", "19.8", "20.1", "20.7", "20.2", "20.2", "21.8", "19.8", "19.9", "20.1", "22.1", "21.9", "20.8", "20.8", "20.2", "19.7", "17.9"]
-	        }, {
-	          label: '2015 Dayly avg temperatures',
-	          fillColor: 'rgba(220,220,220,0.2)',
-	          strokeColor: 'rgba(220,220,220,1)',
-	          pointColor: 'rgba(220,220,220,1)',
-	          pointStrokeColor: '#fff',
-	          pointHighlightFill: '#fff',
-	          pointHighlightStroke: 'rgba(220,220,220,1)',
-	          data: ["21.3", "18.7", "20.3", "21.3", "20.9", "19.3", "20.8", "18.2", "21.1", "21", "22.2", "22.1", "24.6", "23", "23.1", "22.1", "22.5", "22.6", "21.9", "24.1", "25.9", "22.9", "23.7", "23", "23.2", "24.4", "23.8", "26.9", "24", "24.1", "19.8"]
-	        }]
-	      },
-	      option: {
-	        scaleShowGridLines: true,
-	        scaleGridLineColor: 'rgba(0,0,0,.05)',
-	        scaleGridLineWidth: 1,
-	        scaleShowHorizontalLines: true,
-	        scaleShowVerticalLines: true,
-	        bezierCurve: true,
-	        bezierCurveTension: 0.4,
-	        pointDot: true,
-	        pointDotRadius: 4,
-	        pointDotStrokeWidth: 1,
-	        pointHitDetectionRadius: 20,
-	        datasetStroke: true,
-	        datasetStrokeWidth: 2,
-	        datasetFill: true,
-	        legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
-	      }
-	    };
-	    return _this;
-	  }
-
-	  _createClass(ChartsComponent, [{
-	    key: 'render',
-
-
-	    // readTemperatureData() {
-	    //   console.debug(' - ChartsComponent readTemperatureData');
-	    //   $.ajax({
-	    //     url: "/api/temperature",
-	    //     type: 'GET',
-	    //     dataType: 'json',
-	    //     cache: false,
-	    //     success: (response) => {
-	    //     },
-	    //     error: (xhr, status, err) => {
-	    //       console.error("/api/temperature", status, err.toString());
-	    //     }
-	    //   });
-	    // }
-
-	    value: function render() {
-	      console.debug(' - ChartsComponent render');
-	      console.debug(this.state);
-	      var style = {
-	        content: {
-	          padding: '10px 40px',
-	          color: '#000000',
-	          backgroundColor: '#ffffff'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'chartsComponent', style: style.content },
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Chart Component'
-	        ),
-	        _react2.default.createElement(_reactChartjs.Line, { data: this.state.data, options: this.state.option, width: '900', height: '450' })
-	      );
-	    }
-	  }]);
-
-	  return ChartsComponent;
-	}(_react.Component);
-
-	var MainComponent = exports.MainComponent = function (_Component2) {
-	  _inherits(MainComponent, _Component2);
+	var MainComponent = exports.MainComponent = function (_Component) {
+	  _inherits(MainComponent, _Component);
 
 	  function MainComponent(props) {
 	    _classCallCheck(this, MainComponent);
 
 	    console.debug('MainComponent constructor');
 
-	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(MainComponent).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MainComponent).call(this, props));
 
-	    _this2.state = { data: [] };
-	    return _this2;
+	    _this.state = { data: [] };
+	    return _this;
 	  }
 
 	  _createClass(MainComponent, [{
@@ -212,7 +106,7 @@
 	          null,
 	          'Main Component'
 	        ),
-	        _react2.default.createElement(ChartsComponent, { data: this.state.data })
+	        _react2.default.createElement(_chart2.default, { data: this.state.data })
 	      );
 	    }
 	  }]);
@@ -20516,31 +20410,32 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */
+/* 168 */,
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
-	  Bar: __webpack_require__(169),
-	  Doughnut: __webpack_require__(173),
-	  Line: __webpack_require__(174),
-	  Pie: __webpack_require__(175),
-	  PolarArea: __webpack_require__(176),
-	  Radar: __webpack_require__(177),
-	  createClass: __webpack_require__(170).createClass
+	  Bar: __webpack_require__(170),
+	  Doughnut: __webpack_require__(174),
+	  Line: __webpack_require__(175),
+	  Pie: __webpack_require__(176),
+	  PolarArea: __webpack_require__(177),
+	  Radar: __webpack_require__(178),
+	  createClass: __webpack_require__(171).createClass
 	};
 
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(170);
+	var vars = __webpack_require__(171);
 
 	module.exports = vars.createClass('Bar', ['getBarsAtEvent']);
 
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -20599,7 +20494,7 @@
 	    };
 
 	    classData.initializeChart = function(nextProps) {
-	      var Chart = __webpack_require__(171);
+	      var Chart = __webpack_require__(172);
 	      var el = ReactDOM.findDOMNode(this);
 	      var ctx = el.getContext("2d");
 	      var chart = new Chart(ctx)[chartType](nextProps.data, nextProps.options || {});
@@ -20675,7 +20570,7 @@
 
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -20989,7 +20884,7 @@
 				//Method for warning of errors
 				if (window.console && typeof window.console.warn === "function") console.warn(str);
 			},
-			amd = helpers.amd = ("function" === 'function' && __webpack_require__(172)),
+			amd = helpers.amd = ("function" === 'function' && __webpack_require__(173)),
 			//-- Math methods
 			isNumber = helpers.isNumber = function(n){
 				return !isNaN(parseFloat(n)) && isFinite(n);
@@ -24417,7 +24312,7 @@
 
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
@@ -24425,49 +24320,168 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(170);
-
-	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
-
-
-/***/ },
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(170);
+	var vars = __webpack_require__(171);
 
-	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
+	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
 
 
 /***/ },
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(170);
+	var vars = __webpack_require__(171);
 
-	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
 
 
 /***/ },
 /* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(170);
+	var vars = __webpack_require__(171);
 
-	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
 
 
 /***/ },
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(170);
+	var vars = __webpack_require__(171);
+
+	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(171);
 
 	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
 
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactChartjs = __webpack_require__(169);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ChartsComponent = function (_Component) {
+	  _inherits(ChartsComponent, _Component);
+
+	  function ChartsComponent(props) {
+	    _classCallCheck(this, ChartsComponent);
+
+	    console.debug(' - ChartsComponent constructor');
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ChartsComponent).call(this, props));
+
+	    _this.state = {
+	      data: {
+	        labels: ["2016/05/29", "2016/05/30", "2016/05/31", "2016/06/01", "2016/06/02", "2016/06/03", "2016/06/04", "2016/06/05", "2016/06/06", "2016/06/07", "2016/06/08", "2016/06/09", "2016/06/10", "2016/06/11", "2016/06/12", "2016/06/13", "2016/06/14", "2016/06/15", "2016/06/16", "2016/06/17", "2016/06/18", "2016/06/19", "2016/06/20", "2016/06/21", "2016/06/22", "2016/06/23", "2016/06/24", "2016/06/25", "2016/06/26", "2016/06/27", "2016/06/28"],
+	        datasets: [{
+	          label: '2015 Dayly max temperatures',
+	          fillColor: 'rgba(128,0,0,0.2)',
+	          strokeColor: 'rgba(128,0,0,1)',
+	          pointColor: 'rgba(128,0,0,1)',
+	          pointStrokeColor: '#fff',
+	          pointHighlightFill: '#fff',
+	          pointHighlightStroke: 'rgba(128,0,0,1)',
+	          data: ["26", "21.2", "24.4", "24.9", "26.9", "23.2", "25.1", "22.1", "26.2", "23.8", "27.1", "24.9", "30", "27.3", "27.8", "25.3", "27", "26.1", "24.2", "29.5", "31.8", "26.6", "27.5", "27.3", "25.8", "28", "27.6", "33.6", "28.4", "30", "22.3"]
+	        }, {
+	          label: '2015 Dayly min temperatures',
+	          fillColor: 'rgba(0,0,128,0.2)',
+	          strokeColor: 'rgba(0,0,128,1)',
+	          pointColor: 'rgba(0,0,128,1)',
+	          pointStrokeColor: '#fff',
+	          pointHighlightFill: '#fff',
+	          pointHighlightStroke: 'rgba(0,0,128,1)',
+	          data: ["16.3", "15.7", "17.9", "17.4", "17.1", "15.2", "15.3", "16.1", "15.2", "18.6", "17.7", "20.5", "21.2", "19.8", "19", "19.8", "20.1", "20.7", "20.2", "20.2", "21.8", "19.8", "19.9", "20.1", "22.1", "21.9", "20.8", "20.8", "20.2", "19.7", "17.9"]
+	        }, {
+	          label: '2015 Dayly avg temperatures',
+	          fillColor: 'rgba(220,220,220,0.2)',
+	          strokeColor: 'rgba(220,220,220,1)',
+	          pointColor: 'rgba(220,220,220,1)',
+	          pointStrokeColor: '#fff',
+	          pointHighlightFill: '#fff',
+	          pointHighlightStroke: 'rgba(220,220,220,1)',
+	          data: ["21.3", "18.7", "20.3", "21.3", "20.9", "19.3", "20.8", "18.2", "21.1", "21", "22.2", "22.1", "24.6", "23", "23.1", "22.1", "22.5", "22.6", "21.9", "24.1", "25.9", "22.9", "23.7", "23", "23.2", "24.4", "23.8", "26.9", "24", "24.1", "19.8"]
+	        }]
+	      },
+	      option: {
+	        scaleShowGridLines: true,
+	        scaleGridLineColor: 'rgba(0,0,0,.05)',
+	        scaleGridLineWidth: 1,
+	        scaleShowHorizontalLines: true,
+	        scaleShowVerticalLines: true,
+	        bezierCurve: true,
+	        bezierCurveTension: 0.4,
+	        pointDot: true,
+	        pointDotRadius: 4,
+	        pointDotStrokeWidth: 1,
+	        pointHitDetectionRadius: 20,
+	        datasetStroke: true,
+	        datasetStrokeWidth: 2,
+	        datasetFill: true,
+	        legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
+	      }
+	    };
+	    return _this;
+	  }
+
+	  _createClass(ChartsComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      console.debug(' - ChartsComponent render');
+	      console.debug(this.state);
+	      var style = {
+	        content: {
+	          padding: '10px 40px',
+	          color: '#000000',
+	          backgroundColor: '#ffffff'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'chartsComponent', style: style.content },
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Chart Component'
+	        ),
+	        _react2.default.createElement(_reactChartjs.Line, { data: this.state.data, options: this.state.option, width: '900', height: '450' })
+	      );
+	    }
+	  }]);
+
+	  return ChartsComponent;
+	}(_react.Component);
+
+	exports.default = ChartsComponent;
 
 /***/ }
 /******/ ]);
