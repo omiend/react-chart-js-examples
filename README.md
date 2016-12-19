@@ -2,7 +2,7 @@
 
 ## demo
 
-[2016年5月29日〜2016年6月28日の気温推移 | 静岡県静岡市清水区](http://omiend.github.io/react-temperature/public/index.html)
+[2016年5月29日〜2016年6月28日の気温推移 | 静岡県静岡市清水区](http://omiend.github.io/react-temperature/index.html)
 
 ## clone
 
