@@ -9,7 +9,7 @@
     "react": "^15.1.0",
     "react-chartjs": "0.7.3",
     "react-dom": "^15.1.0",
-    "superagent": "^2.0.0"
+    "superagent": "^5.1.2"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
